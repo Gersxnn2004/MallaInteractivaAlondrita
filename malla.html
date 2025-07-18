@@ -2,20 +2,34 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Malla Interactiva</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Tu CSS personalizado -->
   <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
 </head>
-<body class="malla-body">
-  <div class="contenedor-malla" id="contenedorMalla">
+<body class="malla-body d-flex flex-column align-items-center min-vh-100 p-3">
+
+  <!-- Imagen arriba, opcional -->
+  <img src="img/izquierda.png" alt="Imagen Izquierda" class="mb-4" style="width: 80px;" />
+
+  <!-- Contenedor principal: vertical, ancho controlado, con gap entre bloques -->
+  <div class="contenedor-malla container d-flex flex-column gap-4 flex-grow-1" id="contenedorMalla">
     <!-- Aquí se inyectarán los contenidos dinámicamente -->
   </div>
 
-  <button class="btn-salir" onclick="location.href='index.html'">SALIR</button>
+  <!-- Imagen abajo, opcional -->
+  <img src="img/derecha.png" alt="Imagen Derecha" class="mt-4" style="width: 80px;" />
 
-  <button class="btn-borrar" id="btnBorrar">BORRAR PROGRESO</button>
+  <!-- Botones grandes, anchos, separados -->
+  <button class="btn btn-primary btn-lg w-100 mt-4" onclick="location.href='index.html'">SALIR</button>
+  <button class="btn btn-danger btn-lg w-100 mt-3" id="btnBorrar">BORRAR PROGRESO</button>
 
+  <!-- Script JS -->
   <script src="js/malla.js"></script>
 </body>
 </html>
