@@ -278,14 +278,124 @@
         </p>
     </div>
     <div class="content-card">
-      <h3>Sistemas de ecuaciones lineales (2x2)</h3>
-      <p>Conjunto de dos ecuaciones con dos incógnitas → se busca punto de intersección de dos rectas :contentReference[oaicite:9]{index=9}.</p>
-      <p><em>Ejemplo:</em> {2x + y = 5; x – y = 1} → se resuelven juntas.</p>
+      <h3>Sistemas de Ecuaciones Lineales (2x2)</h3>
+        <p>
+          Un <strong>sistema de ecuaciones lineales 2x2</strong> es, simplemente, un conjunto de "dos ecuaciones de primer grado" (lineales) que comparten las mismas "dos incógnitas" (variables, como X e Y). El objetivo principal al resolver un sistema como este es encontrar los valores específicos para esas dos incógnitas que satisfacen "ambas" ecuaciones al mismo tiempo, que es la parte complicada.
+        </p>
+        <p>
+          Visualmente, puedes pensar en cada ecuación lineal como la representación de una línea recta en un gráfico. Cuando resuelves el sistema, lo que estás buscando es el "punto exacto donde esas dos rectas se cruzan o intersectan". Ese punto es la única combinación de valores (x, y) que funciona para ambas ecuaciones, si se entiende verdad?, bueno cualquier cosa me preguntas sjsjk.
+        </p>
+        <p>
+          <em>Ejemplo:</em>
+          Consideremos el siguiente sistema de ecuaciones:
+          <ul>
+            <li>Ecuación 1: 2x + y = 5</li>
+            <li>Ecuación 2: x - y = 1</li>
+          </ul>
+        </p>
+        <p>
+          Para resolver este sistema, existen varios métodos, pero uno de los más comunes es el de eliminación (también conocido como suma y resta) o el de sustitución, aqui los veremos.
+        </p>
+        <p>
+          <strong>Método de Eliminación (Ejemplo con el sistema anterior mencionado):</strong>
+          <ol>
+            <li>Observa las ecuaciones. Aquí, si sumamos Ecuación 1 y Ecuación 2, la variable Y se eliminará:
+              <pre>
+                 2x + y = 5
+                  x - y = 1
+                ------------
+                 3x + 0y = 6
+                      3x = 6
+              </pre>
+            </li>
+            <li>Ahora que eliminamos la Y de manera sencilla, resolveremos la ecuacion para encontrar la icognita de X:
+              <pre>
+                3x = 6
+                 x = 6 / 3 (se divide en 3 porque en el otro lado estaba siendo multiplicado, asi se cancela la operacion)
+                 x = 2
+              </pre>
+            </li>
+            <li>Sustituimos el valor de X (que es 2) en cualquiera de las ecuaciones originales para encontrar Y. Usemos la Ecuación 2: (x - y = 1):
+              <pre>
+                 2 - y = 1
+                    -y = 1 - 2
+                    -y = -1
+                     y = 1
+              </pre>
+            </li>
+          </ol>
+          <p>
+            La solución a este sistema de ecuaciones es X = 2 y Y = 1. Esto significa que el punto donde ambas rectas se cruzan en un gráfico es (2, 1). Si reemplazamos X=2 e Y=1 en la ecuacion original, veremos que se cumple la igualdad.
+          </p>
     </div>
     <div class="content-card">
-      <h3>Función lineal y afín</h3>
-      <p>Lineal: f(x)=m x (pasa por el origen). Afín: f(x)=m x + b (no necesariamente) :contentReference[oaicite:10]{index=10}.</p>
-      <p><em>Ejemplo lineal:</em> f(x)=2x. <em>Ejemplo afín:</em> sueldo=f(x)=20.000 x + 300.000.</p>
+      <h3>Función Lineal y Afín</h3>
+        <p>
+          Una de las herramientas más importantes en matemáticas para describir relaciones entre cantidades son las funciones, y entre ellas, las <strong>funciones lineales</strong> y <strong>afines</strong> son las más sencillas y comunes. Ambas representan líneas rectas cuando las dibujamos en un gráfico.
+        </p>
+        
+        <h4>Función Lineal</h4>
+        <p>
+          Una <strong>función lineal</strong> es un tipo específico de función cuya gráfica siempre es una línea recta que <strong>pasa por el origen</strong> del plano cartesiano (el punto (0,0)). Su estructura es muy simple:
+        </p>
+        <ul>
+          <li>
+            <strong>Fórmula:</strong> <code>f(x) = mx</code>
+            <ul>
+              <li>
+                <strong><code>m</code> (pendiente):</strong> Este número nos dice qué tan inclinada está la línea y si sube (si <code>m</code> es positivo) o baja (si <code>m</code> es negativo). También indica cuánto cambia el valor de <code>f(x)</code> por cada unidad que cambia <code>x</code>.
+              </li>
+              <li>
+                <strong><code>x</code> (variable independiente):</strong> Es el valor de entrada a la función.
+              </li>
+              <li>
+                <strong><code>f(x)</code> (variable dependiente):</strong> Es el valor de salida de la función, que depende de <code>x</code>. A veces se usa simplemente <code>y</code> en lugar de <code>f(x)</code>.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Ejemplo:</strong> <code>f(x) = 2x</code>
+            <ul>
+              <li>Aquí, <code>m = 2</code>. Esto significa que por cada unidad que <code>x</code> aumenta, <code>f(x)</code> aumenta en 2 unidades.</li>
+              <li>Si <code>x = 0</code>, <code>f(x) = 2(0) = 0</code>. La función pasa por el origen (0,0).</li>
+              <li>Si <code>x = 1</code>, <code>f(x) = 2(1) = 2</code>.</li>
+              <li>Si <code>x = 2</code>, <code>f(x) = 2(2) = 4</code>.</li>
+            </ul>
+          </li>
+        </ul>
+        
+        <h4>Función Afín</h4>
+        <p>
+          Una <strong>función afín</strong> es muy parecida a una función lineal, pero con una pequeña diferencia: su gráfica es también una línea recta, pero <strong>no necesariamente pasa por el origen</strong>. Puede cruzar el eje <code>y</code> en cualquier otro punto.
+        </p>
+        <ul>
+          <li>
+            <strong>Fórmula:</strong> <code>f(x) = mx + b</code>
+            <ul>
+              <li>
+                <strong><code>m</code> (pendiente):</strong> Al igual que en la función lineal, nos indica la inclinación de la recta.
+              </li>
+              <li>
+                <strong><code>b</code> (ordenada al origen o coeficiente de posición):</strong> Este número es clave. Representa el punto donde la recta cruza el eje <code>y</code>. Es el valor de <code>f(x)</code> cuando <code>x = 0</code>. Si <code>b = 0</code>, la función afín se convierte en una función lineal.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Ejemplo:</strong> Imagina el sueldo de un vendedor que recibe una base fija más una comisión por venta.
+            <ul>
+              <li>
+                <strong>Sueldo = <code>f(x) = 20.000x + 300.000</code></strong>
+              </li>
+              <li>Aquí, <code>m = 20.000</code> (la comisión por cada venta, <code>x</code>).</li>
+              <li>Y <code>b = 300.000</code> (el sueldo base fijo, incluso si no realiza ventas).</li>
+              <li>Si <code>x = 0</code> (no hace ventas), su sueldo es <code>f(0) = 20.000(0) + 300.000 = 300.000</code>. La recta cruza el eje <code>y</code> en 300.000.</li>
+              <li>Si <code>x = 5</code> (hace 5 ventas), su sueldo es <code>f(5) = 20.000(5) + 300.000 = 100.000 + 300.000 = 400.000</code>.</li>
+            </ul>
+          </li>
+        </ul>
+        <p>
+          En resumen, la principal diferencia radica en si la recta pasa o no por el origen. Una función lineal siempre lo hace (<code>b=0</code>), mientras que una función afín puede hacerlo o no (<code>b</code> puede ser cualquier número, incluyendo 0).
+        </p>
     </div>
     <div class="content-card">
       <h3>Función cuadrática</h3>
