@@ -2,25 +2,26 @@
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    box-sizing: border-box; /* Asegura que padding y borde no aumenten el tamaño */
-    min-height: 100vh; /* Asegura que el fondo cubra al menos toda la altura de la ventana */
-    display: flex; /* Usamos flexbox para organizar los elementos principales */
-    flex-direction: column; /* Apila los elementos verticalmente */
-    align-items: center; /* Centra horizontalmente los elementos */
-    justify-content: center; /* Centra verticalmente los elementos si hay espacio */
-    padding: 20px; /* Padding general para evitar que el contenido toque los bordes */
-    background-size: cover; /* Asegura que el degradado cubra toda el área */
-    background-position: center; /* Centra el degradado */
-    background-repeat: no-repeat; /* Evita que el degradado se repita */
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     position: relative;
 }
+
+/* --- Fondos de Body Específicos por Página --- */
 .index-body {
-    background: linear-gradient(to bottom, #ff007f, #ffd1dc); /* Tu degradado rosado */
-    /* Las propiedades background-size, -position, -repeat ya están en 'body' */
+    background: linear-gradient(to bottom, #ff007f, #ffd1dc); /* Degradado rosado para index.html */
 }
-/* La clase malla-body se aplica a la misma etiqueta body, por lo que las propiedades se sobrescribirán si es necesario */
+
 .malla-body {
-    background: linear-gradient(to bottom, #0047ab, #b3cde0); /* Tu degradado azul */
+    background: linear-gradient(to bottom, #0047ab, #b3cde0); /* Degradado azul para malla.html */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -32,20 +33,19 @@ body {
     background-repeat: no-repeat;
 }
 
-/* --- Imágenes Decorativas (si las usas) --- */
-/* Las dejamos como absolutas, pero ajustamos sus posiciones y tamaños para móviles */
+/* --- Imágenes Decorativas (Estilos por defecto para escritorio) --- */
 .imagen-izquierda {
     position: absolute;
-    top: 20px; /* Margen desde la parte superior */
-    left: 20px; /* Margen desde la parte izquierda */
+    top: 20px;
+    left: 20px;
     width: 100px;
     z-index: 10;
 }
 
 .imagen-derecha {
     position: absolute;
-    top: 20px; /* Margen desde la parte superior */
-    right: 20px; /* Margen desde la parte derecha */
+    top: 20px; /* Queremos que siempre esté arriba en escritorio */
+    right: 20px;
     width: 100px;
     z-index: 10;
 }
@@ -57,76 +57,77 @@ body {
     gap: 30px;
     width: 100%;
     max-width: 800px;
-    margin: 20px auto; /* Centra el contenedor y añade margen vertical */
+    margin: 20px auto;
     padding: 15px;
     box-sizing: border-box;
-    flex-grow: 1; /* Permite que el contenedor de la malla ocupe el espacio disponible, empujando los botones hacia abajo */
+    flex-grow: 1;
 }
+
+/* --- Contenedor de Botones (Página Principal) --- */
 .contenedor-botones {
     display: flex;
-    flex-direction: column; /* Apila los botones verticalmente */
-    gap: 20px; /* Espacio entre los botones */
-    margin: auto; /* Centra el contenedor vertical y horizontalmente */
-    padding: 20px; /* Padding interno para que los botones no queden pegados al borde del contenedor */
-    width: 90%; /* Ocupa la mayoría del ancho disponible */
-    max-width: 400px; /* Ancho máximo para el contenedor de botones */
+    flex-direction: column;
+    gap: 20px;
+    margin: auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
     box-sizing: border-box;
 }
 
-/* --- Bloques de Contenido Principal (Bloque Nivel 1) --- */
+/* --- Bloques de Contenido (Malla y General) --- */
 .bloque-contenido {
-    background-color: #ff1493; /* Rosa brillante */
+    background-color: #ff1493;
     color: white;
-    padding: 20px; /* Ajustado para móviles */
+    padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    font-size: 22px; /* Ajustado para móviles */
+    font-size: 22px;
     font-weight: bold;
     transition: opacity 0.3s, transform 0.3s;
     position: relative;
-    text-align: center; /* Centra el texto dentro del bloque */
+    text-align: center;
 }
 
 .bloque-contenido:hover {
-    transform: translateY(-5px); /* Efecto sutil al pasar el ratón */
+    transform: translateY(-5px);
 }
 
 .bloque-contenido.opaco {
     opacity: 0.4;
 }
 
-/* --- Subcontenidos (Elementos anidados) --- */
 .subcontenidos {
-    margin-top: 15px; /* Espacio superior */
+    margin-top: 15px;
     display: flex;
-    flex-direction: column; /* Apila los subcontenidos verticalmente */
-    gap: 10px; /* Espacio entre subcontenidos */
-    padding: 0 10px; /* Pequeño padding horizontal para alinear con el bloque padre */
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 10px;
 }
 
 .subcontenido {
-    background-color: #ffc0cb; /* Rosa claro */
+    background-color: #ffc0cb;
     color: #333;
-    padding: 10px 15px; /* Ajustado para móviles */
+    padding: 10px 15px;
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.2s;
-    font-size: 16px; /* Ajustado para móviles */
+    font-size: 16px;
     font-weight: normal;
-    border-left: 5px solid #ff69b4; /* Borde decorativo */
-    text-align: left; /* Alinea el texto a la izquierda */
+    border-left: 5px solid #ff69b4;
+    text-align: left;
 }
 
 .subcontenido:hover {
     background-color: #fbb6c1;
-    transform: translateX(5px); /* Efecto al pasar el ratón */
+    transform: translateX(5px);
 }
 
 .subcontenido.opaco {
     opacity: 0.4;
 }
 
-/* --- Botones Globales (SALIR, BORRAR PROGRESO) --- */
+/* --- Botones Generales --- */
 button {
     padding: 15px 30px;
     font-size: 20px;
@@ -139,10 +140,9 @@ button {
     box-shadow: 0 4px 8px rgba(255, 105, 180, 0.3);
     font-weight: bold;
     letter-spacing: 1px;
-    width: 100%; /* Los botones ocupan el 100% del contenedor-botones */
-    box-sizing: border-box; /* Asegura que padding y borde no aumenten el tamaño */
+    width: 100%;
+    box-sizing: border-box;
 }
-
 
 button:hover {
     background-color: #ff69b4;
@@ -151,26 +151,26 @@ button:hover {
     transform: scale(1.05);
 }
 
-
 /* Estilos específicos para btn-salir */
 .btn-salir {
     background-color: #388e3c;
     color: white;
     border: none;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    margin-top: 40px; /* Añadimos más margen arriba para separarlo del último bloque de contenido */
+    margin-top: 40px;
 }
 
 .btn-salir:hover {
     background-color: #2e7d32;
 }
+
 /* Estilos específicos para btn-borrar */
 .btn-borrar {
     background-color: #ff6961;
     color: white;
     border: none;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    margin-bottom: 40px; /* Añadimos margen inferior para que no quede pegado al borde */
+    margin-bottom: 40px;
 }
 
 .btn-borrar:hover {
@@ -178,75 +178,76 @@ button:hover {
 }
 
 /* --- Página de Contenido (contenido-page) --- */
-/* Si tienes una página de contenido separada, se aplicarán estos estilos */
 body.contenido-page {
-    background: linear-gradient(to bottom, #b2fab4, #d0f5c3, #ecffe8); /* Verde pastel */
-    padding: 30px 15px; /* Ajuste de padding para móviles */
-    display: block; /* Asegura que el body se comporte normalmente aquí */
+    background: linear-gradient(to bottom, #b2fab4, #d0f5c3, #ecffe8);
+    padding: 30px 15px;
+    display: flex; /* Changed from block to flex for better control */
+    flex-direction: column; /* Ensure vertical stacking */
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .main-content {
     display: flex;
-    flex-direction: column; /* Apila las secciones verticalmente */
+    flex-direction: column;
     align-items: center;
     padding: 1rem;
-    gap: 1.5rem; /* Espacio entre secciones */
-    background: linear-gradient(to bottom, #c8f7c5, #dfffe1); /* Fondo claro para el contenido */
-    max-width: 900px; /* Ancho máximo */
-    margin: 0 auto; /* Centra el contenido */
-    border-radius: 15px; /* Bordes redondeados para el contenedor principal */
+    gap: 1.5rem;
+    background: linear-gradient(to bottom, #c8f7c5, #dfffe1);
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 15px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .content-section {
-    background-color: #a8e6a1; /* Verde */
-    border-radius: 15px; /* Menos redondeado para que se vea mejor */
+    background-color: #a8e6a1;
+    border-radius: 15px;
     padding: 1.2rem;
-    width: 100%; /* Ocupa el 100% del contenedor padre */
-    max-width: 750px; /* Ancho máximo para las secciones */
+    width: 100%;
+    max-width: 750px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
     box-sizing: border-box;
 }
 
 .content-section h2 {
-    font-size: 1.3rem; /* Ajustado */
+    font-size: 1.3rem;
     color: #1d5f1f;
     margin-bottom: 0.8rem;
-    text-align: center; /* Centra los títulos de sección */
+    text-align: center;
 }
 
 .content-card {
     background-color: white;
-    border-radius: 10px; /* Menos redondeado */
-    padding: 0.8rem; /* Menos padding */
-    margin-bottom: 0.8rem; /* Menos margen */
+    border-radius: 10px;
+    padding: 0.8rem;
+    margin-bottom: 0.8rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
 }
 
 .content-card h3 {
     color: #228b22;
     margin-bottom: 0.4rem;
-    font-size: 1.1rem; /* Ajustado */
+    font-size: 1.1rem;
 }
 
 .content-card p {
     color: #333;
-    line-height: 1.4; /* Ajustado */
-    font-size: 0.95rem; /* Ajustado */
+    line-height: 1.4;
+    font-size: 0.95rem;
 }
 
 .content-card em {
     color: #555;
-    font-size: 0.9rem; /* Ajustado */
+    font-size: 0.9rem;
 }
 
-/* Bloques de Información (posiblemente para la página de contenido) */
 .bloque-info {
-    background-color: #66bb6a; /* Verde académico */
+    background-color: #66bb6a;
     color: white;
-    padding: 25px; /* Ajustado */
-    border-radius: 12px; /* Ajustado */
-    margin-bottom: 30px; /* Ajustado */
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease;
     width: 100%;
@@ -261,67 +262,81 @@ body.contenido-page {
 .subinfo {
     background-color: #f1f8e9;
     color: #333;
-    padding: 15px; /* Ajustado */
-    margin-top: 15px; /* Ajustado */
-    border-radius: 8px; /* Ajustado */
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 8px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
 }
 
 .subinfo h3 {
     margin: 0 0 8px;
-    font-size: 18px; /* Ajustado */
+    font-size: 18px;
     color: #33691e;
 }
 
 .subinfo p {
     margin: 0;
-    font-size: 15px; /* Ajustado */
+    font-size: 15px;
     line-height: 1.4;
 }
 
-/* --- Media Queries para Móviles --- */
+---
+
+### **Media Queries para Dispositivos Móviles**
+
+Para solucionar el problema de las imágenes en móvil, necesitamos usar la clase del `body` en el selector de la media query.
+
+```css
+/* --- Media Query para Dispositivos con Ancho Máximo de 768px --- */
 @media (max-width: 768px) {
-    .index-body {
-        padding: 15px; /* Reducimos el padding general */
-    }
-    .imagen-izquierda {
-        top: 10px;
-        left: 10px;
-        width: 70px; /* Reducimos el tamaño en móviles */
-    }
-
-    .imagen-derecha {
-        top: 10px;
-        right: 10px;
-        width: 70px; /* Reducimos el tamaño en móviles */
-    }
-
-    .contenedor-botones {
-        gap: 15px; /* Menos espacio entre botones */
-        padding: 15px;
-        width: 95%; /* Ocupa más ancho en móviles */
-        max-width: 350px; /* Límite */
-    }
-
-    button {
-        font-size: 18px; /* Reducimos la fuente del botón */
-        padding: 12px 20px;
-        border-radius: 12px;
-    }
-}
-
-/* Media query para móviles en la página de Malla (malla.html) */
-@media (max-width: 768px) {
-    .malla-body {
+    /* Ajustes generales del body para móviles */
+    body {
         padding: 10px;
     }
 
-    .imagen-izquierda, .imagen-derecha {
+    /* Ajustes ESPECÍFICOS para imágenes en index.html */
+    .index-body .imagen-izquierda {
+        top: 10px;
+        left: 10px;
+        width: 60px; /* Un poco más pequeñas para móviles */
+    }
+
+    .index-body .imagen-derecha {
+        top: 10px; /* Aseguramos que siempre esté arriba */
+        right: 10px;
+        width: 60px; /* Un poco más pequeñas para móviles */
+    }
+
+    /* Ajustes ESPECÍFICOS para imágenes en malla.html */
+    .malla-body .imagen-izquierda {
         width: 50px;
         top: 5px;
         left: 5px;
-        bottom: 5px;
+    }
+
+    .malla-body .imagen-derecha {
+        width: 50px;
+        top: 5px; /* Mantenerla arriba en malla.html para móvil si es lo que quieres */
         right: 5px;
+    }
+
+    /* Contenedor de Botones (index.html) */
+    .contenedor-botones {
+        gap: 15px;
+        padding: 10px;
+        width: 95%;
+        max-width: 320px; /* Límite ajustado para móviles */
+    }
+
+    button {
+        font-size: 16px;
+        padding: 10px 15px;
+        border-radius: 10px;
+    }
+
+    /* Malla.html - Contenido */
+    .malla-body {
+        padding: 10px;
     }
 
     .contenedor-malla {
@@ -345,8 +360,7 @@ body.contenido-page {
         border-left-width: 2px;
     }
 
-    /* Los botones de salir y borrar ya están definidos globalmente y ajustados en el media query principal */
-    /* Asegúrate de que las reglas específicas para .btn-salir y .btn-borrar estén en sus respectivas media queries si las quieres diferentes */
+    /* Botones de Salir y Borrar (malla.html) */
     .btn-salir, .btn-borrar {
         font-size: 15px;
         padding: 9px 12px;
@@ -361,5 +375,44 @@ body.contenido-page {
 
     .btn-borrar {
         margin-bottom: 30px;
+    }
+
+    /* Ajustes para la página de Contenidos en móvil */
+    body.contenido-page {
+        padding: 20px 10px;
+    }
+
+    .main-content {
+        padding: 0.8rem;
+        gap: 1rem;
+    }
+
+    .content-section {
+        padding: 1rem;
+    }
+
+    .content-section h2 {
+        font-size: 1.2rem;
+    }
+
+    .content-card {
+        padding: 0.7rem;
+        margin-bottom: 0.7rem;
+    }
+
+    .content-card h3 {
+        font-size: 1rem;
+    }
+
+    .content-card p {
+        font-size: 0.9rem;
+    }
+
+    .subinfo h3 {
+        font-size: 16px;
+    }
+
+    .subinfo p {
+        font-size: 14px;
     }
 }
