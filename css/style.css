@@ -1,44 +1,51 @@
 /* --- Base y Tipografía --- */
 body {
     margin: 0;
-    /* Eliminamos height: 100vh; del body general */
-    background: linear-gradient(to bottom, #ff007f, #ffd1dc);
     font-family: 'Roboto', sans-serif;
-    position: relative;
-    /* Eliminamos el display: flex; align-items: center; justify-content: flex-start; del body general
-       ya que esto es lo que estaba causando que el contenido se centrara y no permitiera el scroll si el contenido excedía la altura.
-       Para la página de malla, usaremos el contenedor-malla para la organización. */
-    padding: 20px;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Asegura que padding y borde no aumenten el tamaño */
+    min-height: 100vh; /* Asegura que el fondo cubra al menos toda la altura de la ventana */
+    display: flex; /* Usamos flexbox para organizar los elementos principales */
+    flex-direction: column; /* Apila los elementos verticalmente */
+    align-items: center; /* Centra horizontalmente los elementos */
+    justify-content: center; /* Centra verticalmente los elementos si hay espacio */
+    padding: 20px; /* Padding general para evitar que el contenido toque los bordes */
+    background-size: cover; /* Asegura que el degradado cubra toda el área */
+    background-position: center; /* Centra el degradado */
+    background-repeat: no-repeat; /* Evita que el degradado se repita */
+}
+.index-body {
+    background: linear-gradient(to bottom, #ff007f, #ffd1dc); /* Tu degradado rosado */
+    /* Las propiedades background-size, -position, -repeat ya están en 'body' */
 }
 /* La clase malla-body se aplica a la misma etiqueta body, por lo que las propiedades se sobrescribirán si es necesario */
 .malla-body {
-    margin: 0; /* Aseguramos que no haya margen externo */
-    padding: 20px; /* Ajustado para móviles, padding general del contenido */
-    background: linear-gradient(to bottom, #0047ab, #b3cde0); /* Fondo para la vista de malla */
-    font-family: 'Roboto', sans-serif; /* Aseguramos la fuente */
-    min-height: 100vh; /* Esto asegura que el fondo cubra al menos toda la altura de la ventana, pero permite crecer */
-    display: flex; /* Usamos flexbox para organizar los elementos principales de la malla */
-    flex-direction: column; /* Apila el contenido principal y los botones verticalmente */
-    align-items: center; /* Centra horizontalmente el contenido dentro de malla-body */
+    background: linear-gradient(to bottom, #0047ab, #b3cde0); /* Tu degradado azul */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
     box-sizing: border-box;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* --- Imágenes Decorativas (si las usas) --- */
 /* Las dejamos como absolutas, pero ajustamos sus posiciones y tamaños para móviles */
 .imagen-izquierda {
     position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 80px;
-    z-index: 10;
+    top: 20px; /* Un poco más de margen arriba */
+    left: 20px; /* Un poco más de margen a la izquierda */
+    width: 100px; /* Tamaño por defecto */
+    z-index: 10; /* Asegura que estén por encima de otros elementos */
 }
 
 .imagen-derecha {
     position: absolute;
-    bottom: 10px;
-    right: 10px;
-    width: 80px;
+    bottom: 20px; /* Un poco más de margen abajo */
+    right: 20px; /* Un poco más de margen a la derecha */
+    width: 100px; /* Tamaño por defecto */
     z-index: 10;
 }
 
@@ -53,6 +60,16 @@ body {
     padding: 15px;
     box-sizing: border-box;
     flex-grow: 1; /* Permite que el contenedor de la malla ocupe el espacio disponible, empujando los botones hacia abajo */
+}
+.contenedor-botones {
+    display: flex;
+    flex-direction: column; /* Apila los botones verticalmente */
+    gap: 20px; /* Espacio entre los botones */
+    margin: auto; /* Centra el contenedor vertical y horizontalmente */
+    padding: 20px; /* Padding interno para que los botones no queden pegados al borde del contenedor */
+    width: 90%; /* Ocupa la mayoría del ancho disponible */
+    max-width: 400px; /* Ancho máximo para el contenedor de botones */
+    box-sizing: border-box;
 }
 
 /* --- Bloques de Contenido Principal (Bloque Nivel 1) --- */
@@ -110,21 +127,19 @@ body {
 
 /* --- Botones Globales (SALIR, BORRAR PROGRESO) --- */
 button {
-    padding: 12px 25px;
-    font-size: 18px;
+    padding: 15px 30px;
+    font-size: 20px;
     background-color: white;
     color: black;
     border: 2px solid #000000;
-    border-radius: 10px;
+    border-radius: 15px;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 8px rgba(255, 105, 180, 0.3);
     font-weight: bold;
-    letter-spacing: 0.5px;
-    width: 90%;
-    max-width: 300px;
-    margin: 10px auto; /* Cada botón tendrá su propio margen para separarse */
-    display: block; /* Asegura que cada botón esté en su propia línea y se centre con margin: auto */
+    letter-spacing: 1px;
+    width: 100%; /* Los botones ocupan el 100% del contenedor-botones */
+    box-sizing: border-box; /* Asegura que padding y borde no aumenten el tamaño */
 }
 
 
@@ -132,8 +147,9 @@ button:hover {
     background-color: #ff69b4;
     color: white;
     box-shadow: 0 6px 12px rgba(255, 105, 180, 0.5);
-    transform: scale(1.03);
+    transform: scale(1.05);
 }
+
 
 /* Estilos específicos para btn-salir */
 .btn-salir {
@@ -264,16 +280,41 @@ body.contenido-page {
 
 /* --- Media Queries para Móviles --- */
 @media (max-width: 768px) {
-    body {
-        padding: 10px; /* Reducimos aún más el padding general del body */
+    .index-body {
+        padding: 15px; /* Reducimos el padding general */
     }
 
+    .imagen-izquierda,
+    .imagen-derecha {
+        width: 70px; /* Reducimos el tamaño en móviles */
+        top: 10px;
+        left: 10px;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .contenedor-botones {
+        gap: 15px; /* Menos espacio entre botones */
+        padding: 15px;
+        width: 95%; /* Ocupa más ancho en móviles */
+        max-width: 350px; /* Límite */
+    }
+
+    button {
+        font-size: 18px; /* Reducimos la fuente del botón */
+        padding: 12px 20px;
+        border-radius: 12px;
+    }
+}
+
+/* Media query para móviles en la página de Malla (malla.html) */
+@media (max-width: 768px) {
     .malla-body {
         padding: 10px;
     }
 
     .imagen-izquierda, .imagen-derecha {
-        width: 50px; /* Más pequeños en pantallas muy chicas */
+        width: 50px;
         top: 5px;
         left: 5px;
         bottom: 5px;
@@ -281,7 +322,7 @@ body.contenido-page {
     }
 
     .contenedor-malla {
-        gap: 15px; /* Más compacto en móviles */
+        gap: 15px;
         padding: 5px;
     }
 
@@ -301,19 +342,21 @@ body.contenido-page {
         border-left-width: 2px;
     }
 
-    button, .btn-salir, .btn-borrar {
+    /* Los botones de salir y borrar ya están definidos globalmente y ajustados en el media query principal */
+    /* Asegúrate de que las reglas específicas para .btn-salir y .btn-borrar estén en sus respectivas media queries si las quieres diferentes */
+    .btn-salir, .btn-borrar {
         font-size: 15px;
         padding: 9px 12px;
-        width: 98%; /* Ocupa casi todo el ancho disponible */
-        max-width: 250px;
-        margin: 8px auto; /* Margen más compacto */
+        width: 95%;
+        max-width: 280px;
+        margin: 8px auto;
     }
 
     .btn-salir {
-        margin-top: 30px; /* Ajuste del margen superior en móviles */
+        margin-top: 30px;
     }
 
     .btn-borrar {
-        margin-bottom: 30px; /* Ajuste del margen inferior en móviles */
+        margin-bottom: 30px;
     }
 }
