@@ -8,10 +8,14 @@ body {
   align-items: center;
   justify-content: center;
 }
+
 body, .malla-body, .contenido-page {
   font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #0047ab, #b3cde0);
+  min-height: 100vh;
 }
-
 
 .imagen-izquierda {
   position: absolute;
@@ -61,22 +65,21 @@ button:hover {
 }
 
 .contenedor-malla {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
+  padding: 30px 15px;
   max-width: 800px;
-  margin: 0 auto;
-  padding: 30px;
+  background-color: #ff1493;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  color: white;
+  font-weight: bold;
+  font-size: 22px;
+  transition: opacity 0.3s, transform 0.3s;
 }
 
 .bloque-contenido {
   background-color: #ff1493;
-  color: white;
   padding: 25px 30px;
   border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  font-size: 24px;
-  font-weight: bold;
   transition: opacity 0.3s, transform 0.3s;
   position: relative;
 }
@@ -108,10 +111,11 @@ button:hover {
   padding: 12px 18px;
   border-radius: 8px;
   cursor: pointer;
-  transition: all 0.2s;
+  border-left: 5px solid #ff69b4;
   font-size: 18px;
   font-weight: normal;
-  border-left: 5px solid #ff69b4;
+  transition: background-color 0.2s;
+  margin-top: 12px;
 }
 
 .subcontenido:hover {
@@ -123,48 +127,23 @@ button:hover {
 }
 
 .btn-salir {
-  display: block;
-  margin: 60px auto 0;
-  padding: 12px 30px;
-  background-color: white;
-  color: #0047ab;
-  border: 2px solid #0047ab;
-  border-radius: 10px;
-  font-size: 18px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: all 0.3s ease;
+  background-color: #388e3c !important;
+  color: white !important;
+  border-radius: 30px !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+  font-weight: 600 !important;
+  letter-spacing: 1px;
 }
 
-.btn-salir {
-  background-color: #388e3c;
-  color: white;
-  padding: 12px 28px;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  font-size: 16px;
-  margin: 30px auto;
-  display: block;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: background-color 0.3s;
-}
 
 .btn-borrar {
-  display: block;
-  margin: 20px auto 0;
-  padding: 12px 30px;
-  background-color: #ff6961;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  font-size: 18px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s;
+  background-color: #ff6961 !important;
+  font-weight: 600 !important;
+  letter-spacing: 1px;
 }
+
 .btn-borrar:hover {
-  background-color: #ee5c55;
+  background-color: #ee5c55 !important;
 }
 
 body.contenido-page {
@@ -173,7 +152,22 @@ body.contenido-page {
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(to bottom, #b2fab4, #d0f5c3, #ecffe8); /* Verde pastel */
 }   
-
+img {
+  max-width: 100%;
+  height: auto;
+}
+@media (max-width: 600px) {
+  .contenedor-malla {
+    font-size: 18px;
+    padding: 20px 15px;
+  }
+  
+  .subcontenido {
+    font-size: 16px;
+    padding: 10px 14px;
+    border-left-width: 4px;
+  }
+}
 .bloque-info {
   background-color: #66bb6a; /* Verde académico */
   color: white;
