@@ -1,315 +1,333 @@
+/* --- Base y Tipografía --- */
 body {
-  margin: 0;
-  height: 100vh;
-  background: linear-gradient(to bottom, #ff007f, #ffd1dc);
-  font-family: 'Arial', sans-serif;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to bottom, #ff007f, #ffd1dc);
+    font-family: 'Roboto', sans-serif; /* Usamos Roboto como se define en HTML */
+    position: relative;
+    display: flex; /* Usamos flexbox para centrar el contenido principal */
+    flex-direction: column; /* Apila elementos verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    justify-content: flex-start; /* Alinea al inicio del eje principal (vertical) */
+    padding: 20px; /* Añadimos padding general para evitar que el contenido toque los bordes */
+    box-sizing: border-box; /* Incluye padding y borde en el tamaño total del elemento */
 }
 
-body, .malla-body, .contenido-page {
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(to bottom, #0047ab, #b3cde0);
-  min-height: 100vh;
+/* La clase malla-body se aplica a la misma etiqueta body, por lo que las propiedades se sobrescribirán si es necesario */
+.malla-body {
+    background: linear-gradient(to bottom, #0047ab, #b3cde0); /* Fondo para la vista de malla */
+    padding: 20px; /* Ajustado para móviles */
+    box-sizing: border-box;
 }
 
+/* --- Imágenes Decorativas (si las usas) --- */
+/* Las dejamos como absolutas, pero ajustamos sus posiciones y tamaños para móviles */
 .imagen-izquierda {
-  position: relative;
-  top: 10px;
-  left: 10px;
-  width: 100px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 80px; /* Ajustado para móviles */
+    z-index: 10; /* Asegura que estén por encima de otros elementos */
 }
 
 .imagen-derecha {
-  position: relative;
-  bottom: 10px;
-  right: 10px;
-  width: 100px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 80px; /* Ajustado para móviles */
+    z-index: 10;
 }
 
-.contenedor-botones {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-button {
-  padding: 15px 30px;
-  font-size: 20px;
-  background-color: white;
-  color: black;
-  border: 2px solid #000000;
-  border-radius: 15px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(255, 105, 180, 0.3);
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-button:hover {
-  background-color: #ff69b4;
-  color: white;
-  box-shadow: 0 6px 12px rgba(255, 105, 180, 0.5);
-  transform: scale(1.05);
-}
-.malla-body {
-  margin: 0;
-  padding: 40px;
-  background: linear-gradient(to bottom, #0047ab, #b3cde0);
-  font-family: 'Arial', sans-serif;
-}
-
+/* --- Contenedor Principal de la Malla --- */
 .contenedor-malla {
-  padding: 30px 15px;
-  max-width: 800px;
-  background-color: #ff1493;
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-  color: white;
-  font-weight: bold;
-  font-size: 22px;
-  transition: opacity 0.3s, transform 0.3s;
+    display: flex;
+    flex-direction: column; /* Asegura que los bloques se apilen verticalmente */
+    gap: 30px; /* Espacio entre bloques */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    max-width: 800px; /* Ancho máximo para pantallas grandes */
+    margin: 20px auto; /* Centra el contenedor y añade margen vertical */
+    padding: 15px; /* Padding interno */
+    box-sizing: border-box;
 }
 
+/* --- Bloques de Contenido Principal (Bloque Nivel 1) --- */
 .bloque-contenido {
-  background-color: #ff1493;
-  padding: 25px 30px;
-  border-radius: 15px;
-  transition: opacity 0.3s, transform 0.3s;
-  position: relative;
+    background-color: #ff1493; /* Rosa brillante */
+    color: white;
+    padding: 20px; /* Ajustado para móviles */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    font-size: 22px; /* Ajustado para móviles */
+    font-weight: bold;
+    transition: opacity 0.3s, transform 0.3s;
+    position: relative;
+    text-align: center; /* Centra el texto dentro del bloque */
 }
 
 .bloque-contenido:hover {
-  transform: translateY(-2px);
+    transform: translateY(-5px); /* Efecto sutil al pasar el ratón */
 }
 
 .bloque-contenido.opaco {
-  opacity: 0.4;
+    opacity: 0.4;
 }
 
+/* --- Subcontenidos (Elementos anidados) --- */
 .subcontenidos {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+    margin-top: 15px; /* Espacio superior */
+    display: flex;
+    flex-direction: column; /* Apila los subcontenidos verticalmente */
+    gap: 10px; /* Espacio entre subcontenidos */
+    padding: 0 10px; /* Pequeño padding horizontal para alinear con el bloque padre */
 }
 
-.subcontenidos {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
 .subcontenido {
-  background-color: #ffc0cb;
-  color: #333;
-  padding: 12px 18px;
-  border-radius: 8px;
-  cursor: pointer;
-  border-left: 5px solid #ff69b4;
-  font-size: 18px;
-  font-weight: normal;
-  transition: background-color 0.2s;
-  margin-top: 12px;
+    background-color: #ffc0cb; /* Rosa claro */
+    color: #333;
+    padding: 10px 15px; /* Ajustado para móviles */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 16px; /* Ajustado para móviles */
+    font-weight: normal;
+    border-left: 5px solid #ff69b4; /* Borde decorativo */
+    text-align: left; /* Alinea el texto a la izquierda */
 }
 
 .subcontenido:hover {
-  background-color: #fbb6c1;
+    background-color: #fbb6c1;
+    transform: translateX(5px); /* Efecto al pasar el ratón */
 }
 
 .subcontenido.opaco {
-  opacity: 0.4;
+    opacity: 0.4;
 }
 
+/* --- Botones Globales (SALIR, BORRAR PROGRESO) --- */
+button {
+    padding: 12px 25px; /* Ajustado para móviles */
+    font-size: 18px; /* Ajustado para móviles */
+    background-color: white;
+    color: black;
+    border: 2px solid #000000;
+    border-radius: 10px; /* Más redondeado */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(255, 105, 180, 0.3);
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    width: 90%; /* Ocupa un buen porcentaje del ancho */
+    max-width: 300px; /* Ancho máximo */
+    margin: 10px auto; /* Centra y añade margen vertical */
+    display: block; /* Asegura que cada botón esté en su propia línea */
+}
+
+button:hover {
+    background-color: #ff69b4;
+    color: white;
+    box-shadow: 0 6px 12px rgba(255, 105, 180, 0.5);
+    transform: scale(1.03); /* Efecto sutil */
+}
+
+/* Estilos específicos para btn-salir */
 .btn-salir {
-  background-color: #388e3c !important;
-  color: white !important;
-  border-radius: 30px !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
-  font-weight: 600 !important;
-  letter-spacing: 1px;
+    background-color: #388e3c; /* Verde */
+    color: white;
+    border: none; /* Quitamos el borde para un look más moderno */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
+.btn-salir:hover {
+    background-color: #2e7d32; /* Verde más oscuro al pasar el ratón */
+}
 
+/* Estilos específicos para btn-borrar */
 .btn-borrar {
-  background-color: #ff6961 !important;
-  font-weight: 600 !important;
-  letter-spacing: 1px;
+    background-color: #ff6961; /* Rojo */
+    color: white;
+    border: none; /* Quitamos el borde */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .btn-borrar:hover {
-  background-color: #ee5c55 !important;
+    background-color: #ee5c55; /* Rojo más oscuro al pasar el ratón */
 }
 
+/* --- Página de Contenido (contenido-page) --- */
+/* Si tienes una página de contenido separada, se aplicarán estos estilos */
 body.contenido-page {
-  margin: 0;
-  padding: 60px 20px;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom, #b2fab4, #d0f5c3, #ecffe8); /* Verde pastel */
-}   
-img {
-  max-width: 100%;
-  height: auto;
-}
-@media (max-width: 600px) {
-  .contenedor-malla {
-    font-size: 18px;
-    padding: 20px 15px;
-  }
-  
-  .subcontenido {
-    font-size: 16px;
-    padding: 10px 14px;
-    border-left-width: 4px;
-  }
-}
-.bloque-info {
-  background-color: #66bb6a; /* Verde académico */
-  color: white;
-  padding: 30px;
-  border-radius: 16px;
-  margin-bottom: 40px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  transition: transform 0.2s ease;
+    background: linear-gradient(to bottom, #b2fab4, #d0f5c3, #ecffe8); /* Verde pastel */
+    padding: 30px 15px; /* Ajuste de padding para móviles */
+    display: block; /* Asegura que el body se comporte normalmente aquí */
 }
 
-
-.bloque-info:hover {
-  transform: translateY(-4px);
-}
-
-.subinfo {
-  background-color: #f1f8e9;
-  color: #333;
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-.subinfo h3 {
-  margin: 0 0 10px;
-  font-size: 20px;
-  color: #33691e;
-}
-
-
-.subinfo p {
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.5;
-}
-/* Contenedor general */
 .main-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem;
-  gap: 2rem;
-  background: linear-gradient(to bottom, #c8f7c5, #dfffe1);
+    display: flex;
+    flex-direction: column; /* Apila las secciones verticalmente */
+    align-items: center;
+    padding: 1rem;
+    gap: 1.5rem; /* Espacio entre secciones */
+    background: linear-gradient(to bottom, #c8f7c5, #dfffe1); /* Fondo claro para el contenido */
+    max-width: 900px; /* Ancho máximo */
+    margin: 0 auto; /* Centra el contenido */
+    border-radius: 15px; /* Bordes redondeados para el contenedor principal */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* Sección de cada categoría */
 .content-section {
-  background-color: #a8e6a1;
-  border-radius: 20px;
-  padding: 1.5rem;
-  width: 90%;
-  max-width: 800px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #a8e6a1; /* Verde */
+    border-radius: 15px; /* Menos redondeado para que se vea mejor */
+    padding: 1.2rem;
+    width: 100%; /* Ocupa el 100% del contenedor padre */
+    max-width: 750px; /* Ancho máximo para las secciones */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
 }
 
-/* Título de sección */
 .content-section h2 {
-  font-size: 1.5rem;
-  color: #1d5f1f;
-  margin-bottom: 1rem;
+    font-size: 1.3rem; /* Ajustado */
+    color: #1d5f1f;
+    margin-bottom: 0.8rem;
+    text-align: center; /* Centra los títulos de sección */
 }
 
-/* Tarjeta de contenido */
 .content-card {
-  background-color: white;
-  border-radius: 15px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    background-color: white;
+    border-radius: 10px; /* Menos redondeado */
+    padding: 0.8rem; /* Menos padding */
+    margin-bottom: 0.8rem; /* Menos margen */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
 }
 
-/* Subtítulo del contenido */
 .content-card h3 {
-  color: #228b22;
-  margin-bottom: 0.5rem;
+    color: #228b22;
+    margin-bottom: 0.4rem;
+    font-size: 1.1rem; /* Ajustado */
 }
 
-/* Ejemplos o descripción */
 .content-card p {
-  color: #333;
-  line-height: 1.5;
+    color: #333;
+    line-height: 1.4; /* Ajustado */
+    font-size: 0.95rem; /* Ajustado */
 }
 
 .content-card em {
-  color: #555;
+    color: #555;
+    font-size: 0.9rem; /* Ajustado */
 }
 
-/* Media query para pantallas móviles */
-@media (max-width: 600px) {
-  .contenedor-malla {
-    max-width: 95%;
-    padding: 15px 10px;
-  }
-
-  .bloque-contenido {
-    font-size: 18px;
-    padding: 18px 20px;
-  }
-
-  .subcontenido {
-    font-size: 16px;
-    padding: 10px 15px;
-    border-left-width: 4px;
-  }
-
-  .imagen-izquierda, .imagen-derecha {
-    width: 60px;
-  }
-
-  .imagen-izquierda {
-    top: 5px;
-    left: 5px;
-  }
-
-  .imagen-derecha {
-    bottom: 5px;
-    right: 5px;
-  }
-
-  button, .btn-salir, .btn-borrar {
-    font-size: 16px;
-    padding: 12px 20px;
-    border-radius: 12px;
-    width: 90%;
-    max-width: 300px;
+/* Bloques de Información (posiblemente para la página de contenido) */
+.bloque-info {
+    background-color: #66bb6a; /* Verde académico */
+    color: white;
+    padding: 25px; /* Ajustado */
+    border-radius: 12px; /* Ajustado */
+    margin-bottom: 30px; /* Ajustado */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    width: 100%;
+    max-width: 800px;
     box-sizing: border-box;
-  }
+}
 
-  .contenedor-botones {
-    gap: 12px;
-  }
+.bloque-info:hover {
+    transform: translateY(-3px);
+}
 
-  /* Ajustes para body padding para que no haya scroll horizontal */
-  body, .malla-body {
-    padding-left: 5px;
-    padding-right: 5px;
-  }
+.subinfo {
+    background-color: #f1f8e9;
+    color: #333;
+    padding: 15px; /* Ajustado */
+    margin-top: 15px; /* Ajustado */
+    border-radius: 8px; /* Ajustado */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
+}
 
-  /* Ajuste en main content o contenedores generales si usas */
-  .main-content, .content-section {
-    width: 95%;
-    padding: 1rem;
-  }
+.subinfo h3 {
+    margin: 0 0 8px;
+    font-size: 18px; /* Ajustado */
+    color: #33691e;
+}
+
+.subinfo p {
+    margin: 0;
+    font-size: 15px; /* Ajustado */
+    line-height: 1.4;
+}
+
+/* --- Media Queries para Móviles --- */
+@media (max-width: 768px) { /* Un breakpoint un poco más generoso */
+    body {
+        padding: 15px; /* Reducimos el padding general */
+    }
+
+    .imagen-izquierda, .imagen-derecha {
+        width: 60px; /* Más pequeños en pantallas muy chicas */
+        top: 5px;
+        left: 5px;
+        bottom: 5px;
+        right: 5px;
+    }
+
+    .contenedor-malla {
+        gap: 20px; /* Reducimos el espacio entre bloques */
+        padding: 10px;
+    }
+
+    .bloque-contenido {
+        font-size: 18px;
+        padding: 15px;
+    }
+
+    .subcontenidos {
+        gap: 8px; /* Reducimos el espacio entre subcontenidos */
+        padding: 0 5px;
+    }
+
+    .subcontenido {
+        font-size: 15px;
+        padding: 8px 12px;
+        border-left-width: 3px; /* Borde más delgado */
+    }
+
+    button, .btn-salir, .btn-borrar {
+        font-size: 16px;
+        padding: 10px 15px;
+        width: 95%; /* Ocupa más ancho en móviles */
+        max-width: 280px; /* Límite */
+    }
+
+    .main-content {
+        padding: 0.8rem;
+        gap: 1rem;
+    }
+
+    .content-section {
+        padding: 1rem;
+    }
+
+    .content-section h2 {
+        font-size: 1.2rem;
+    }
+
+    .content-card {
+        padding: 0.7rem;
+        margin-bottom: 0.7rem;
+    }
+
+    .content-card h3 {
+        font-size: 1rem;
+    }
+
+    .content-card p {
+        font-size: 0.9rem;
+    }
+
+    .subinfo h3 {
+        font-size: 16px;
+    }
+
+    .subinfo p {
+        font-size: 14px;
+    }
 }
