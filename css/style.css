@@ -12,7 +12,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    position: relative;
+    position: relative; /* Indispensable para el posicionamiento absoluto de las imágenes */
 }
 
 /* --- Fondos de Body Específicos por Página --- */
@@ -36,16 +36,16 @@ body {
 /* --- Imágenes Decorativas (Estilos por defecto para escritorio) --- */
 .imagen-izquierda {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 20px; /* Distancia desde el borde superior */
+    left: 20px; /* Distancia desde el borde izquierdo */
     width: 100px;
-    z-index: 10;
+    z-index: 10; /* Asegura que estén por encima de otros elementos */
 }
 
 .imagen-derecha {
     position: absolute;
-    top: 20px; /* Queremos que siempre esté arriba en escritorio */
-    right: 20px;
+    top: 20px; /* Distancia desde el borde superior */
+    right: 20px; /* Distancia desde el borde derecho */
     width: 100px;
     z-index: 10;
 }
@@ -181,8 +181,8 @@ button:hover {
 body.contenido-page {
     background: linear-gradient(to bottom, #b2fab4, #d0f5c3, #ecffe8);
     padding: 30px 15px;
-    display: flex; /* Changed from block to flex for better control */
-    flex-direction: column; /* Ensure vertical stacking */
+    display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
 }
@@ -281,10 +281,9 @@ body.contenido-page {
 }
 
 ---
-
 ### **Media Queries para Dispositivos Móviles**
 
-Para solucionar el problema de las imágenes en móvil, necesitamos usar la clase del `body` en el selector de la media query.
+Para solucionar la superposición en móvil, nos aseguraremos de que las reglas para las imágenes dentro de `.index-body` sean las únicas que se apliquen cuando la pantalla sea pequeña. También ajustaremos sus coordenadas para que tengan suficiente espacio.
 
 ```css
 /* --- Media Query para Dispositivos con Ancho Máximo de 768px --- */
@@ -294,30 +293,33 @@ Para solucionar el problema de las imágenes en móvil, necesitamos usar la clas
         padding: 10px;
     }
 
-    /* Ajustes ESPECÍFICOS para imágenes en index.html */
+    /* 1. Ajustes ESPECÍFICOS para imágenes en index.html (¡Prioridad!) */
     .index-body .imagen-izquierda {
-        top: 10px;
-        left: 10px;
-        width: 60px; /* Un poco más pequeñas para móviles */
+        /* Usamos 'important' para asegurarnos de que estas reglas no sean sobrescritas por otras menos específicas */
+        top: 10px !important;
+        left: 10px !important;
+        width: 60px !important; /* Un poco más pequeñas para móviles */
     }
 
     .index-body .imagen-derecha {
-        top: 10px; /* Aseguramos que siempre esté arriba */
-        right: 10px;
-        width: 60px; /* Un poco más pequeñas para móviles */
+        top: 10px !important; /* Aseguramos que siempre esté arriba */
+        right: 10px !important;
+        width: 60px !important; /* Un poco más pequeñas para móviles */
     }
 
-    /* Ajustes ESPECÍFICOS para imágenes en malla.html */
+    /* 2. Ajustes ESPECÍFICOS para imágenes en malla.html */
     .malla-body .imagen-izquierda {
-        width: 50px;
-        top: 5px;
-        left: 5px;
+        width: 50px !important;
+        top: 5px !important;
+        left: 5px !important;
+        /* Quitamos bottom aquí para que no interfiera */
     }
 
     .malla-body .imagen-derecha {
-        width: 50px;
-        top: 5px; /* Mantenerla arriba en malla.html para móvil si es lo que quieres */
-        right: 5px;
+        width: 50px !important;
+        top: 5px !important; /* Mantenerla arriba en malla.html para móvil si es lo que quieres */
+        right: 5px !important;
+        /* Quitamos bottom aquí para que no interfiera */
     }
 
     /* Contenedor de Botones (index.html) */
