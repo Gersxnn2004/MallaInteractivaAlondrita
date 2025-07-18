@@ -12,6 +12,7 @@ body {
     background-size: cover; /* Asegura que el degradado cubra toda el área */
     background-position: center; /* Centra el degradado */
     background-repeat: no-repeat; /* Evita que el degradado se repita */
+    position: relative;
 }
 .index-body {
     background: linear-gradient(to bottom, #ff007f, #ffd1dc); /* Tu degradado rosado */
