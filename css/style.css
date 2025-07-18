@@ -35,17 +35,17 @@ body {
 /* Las dejamos como absolutas, pero ajustamos sus posiciones y tamaños para móviles */
 .imagen-izquierda {
     position: absolute;
-    top: 20px; /* Un poco más de margen arriba */
-    left: 20px; /* Un poco más de margen a la izquierda */
-    width: 100px; /* Tamaño por defecto */
-    z-index: 10; /* Asegura que estén por encima de otros elementos */
+    top: 20px; /* Margen desde la parte superior */
+    left: 20px; /* Margen desde la parte izquierda */
+    width: 100px;
+    z-index: 10;
 }
 
 .imagen-derecha {
     position: absolute;
-    bottom: 20px; /* Un poco más de margen abajo */
-    right: 20px; /* Un poco más de margen a la derecha */
-    width: 100px; /* Tamaño por defecto */
+    top: 20px; /* Margen desde la parte superior */
+    right: 20px; /* Margen desde la parte derecha */
+    width: 100px;
     z-index: 10;
 }
 
@@ -283,14 +283,16 @@ body.contenido-page {
     .index-body {
         padding: 15px; /* Reducimos el padding general */
     }
-
-    .imagen-izquierda,
-    .imagen-derecha {
-        width: 70px; /* Reducimos el tamaño en móviles */
+    .imagen-izquierda {
         top: 10px;
         left: 10px;
-        bottom: 10px;
+        width: 70px; /* Reducimos el tamaño en móviles */
+    }
+
+    .imagen-derecha {
+        top: 10px;
         right: 10px;
+        width: 70px; /* Reducimos el tamaño en móviles */
     }
 
     .contenedor-botones {
